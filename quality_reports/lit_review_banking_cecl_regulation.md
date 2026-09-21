@@ -193,7 +193,7 @@ The theory literature on expected-loss provisioning is small (about ten papers) 
 
 **Fleer (JAPP 2025) — optimal recognition thresholds.** Models a bank that both supplies credit and provides liquidity to depositors. Recognizing significant lifetime expected losses disciplines ex ante risk-taking but can distort ex post liquidity provision (a loss report can trigger withdrawals). A unique conditionally optimal recognition threshold balances the two, and it depends on the bank's environment. The paper reads this as support for IFRS 9's principle-based "significant increase in credit risk" (SICR) trigger over a one-size-fits-all rule, and by implication as a caution against CECL's day-one lifetime recognition for every exposure.
 
-**Lu & Zhang (Advances in Accounting 2026) — time-varying capital ratios under CECL.** Chooses the capital ratio that maximizes the joint surplus of debtholders and equityholders when the regulator observes CECL reports. The optimal ratio depends on two cycle parameters: persistence of shocks to loan quality (asset side) and intertemporal change in deposit liquidity demand (liability side). For highly levered banks the optimal ratio is procyclical when prospects are rosy (anticipated upturn or persistent boom) and countercyclical when prospects are gloomy. The point for policy is that a static ratio is never optimal once provisions are forward-looking.
+**Lu & Zhang (Advances in Accounting 2026) — time-varying capital ratios under CECL.** Chooses the capital ratio that maximizes the joint surplus of debtholders and equityholders when the regulator observes CECL reports. The optimal ratio depends on two cycle parameters: persistence of shocks to loan quality (asset side) and intertemporal change in deposit liquidity demand (liability side). For highly levered banks the optimal initial ratio is tighter when a cycle turn is anticipated and looser when the current phase is expected to persist (the working-paper version phrases this as procyclical under rosy prospects and countercyclical under gloomy ones). The point for policy is that a static ratio is never optimal once provisions are forward-looking.
 
 **Vidinova (working paper, 2023) — CECL under behavioral forecasts.** Builds a model of provisions, lending, output and stability under CECL, first with rational expectations and then with forecasts shaped by the representativeness heuristic (overreaction to recent news). Overreaction produces under-provisioning, excess lending and risk-taking after good news and the reverse after bad news, so CECL becomes procyclical precisely because it loads on forecasts that cannot see cycle turns. The optimal minimum capital requirement is time-varying and tighter when default risk is high; with behavioral forecasts the constraint must bind even when equity is high and, holding true risk fixed, the optimal requirement falls in the bank's *perceived* risk (because over-pessimistic banks already over-provision). Bhojraj et al. (JAE forthcoming) supply the empirical counterpart: supervisory loss forecasts do overreact.
 
@@ -201,7 +201,7 @@ The theory literature on expected-loss provisioning is small (about ten papers) 
 
 **Abad, Ikeda & Suarez (CEMFI WP 2025) — dynamic banking model with ratings migration.** Extends Abad & Suarez (2018) into a calibrated dynamic model with a recursive ratings-migration structure for loan quality. Quantifies the increase in lending's sensitivity to economic conditions after the switch to expected loss and evaluates Basel III's countercyclical capital buffer as an offset, finding non-trivial trade-offs rather than a free lunch. (Full quantitative results could not be retrieved in this environment; read the paper for the headline elasticities.)
 
-**Huber (working paper, 2022; R&R at JAR per author's site) — estimated model.** Develops and estimates a model of lending under accounting-based capital requirements, then counterfactually imposes CECL. CECL raises allowances relative to IL (about 16% in the version quoted by one source, with a larger gap in downturns) and reduces lending by a few percent; magnitudes differ across circulating versions.
+**Huber (working paper, 2022; R&R at JAR per author's site) — estimated model.** Develops and estimates a model of lending under accounting-based capital requirements, then counterfactually imposes CECL. CECL raises allowances relative to IL by about 16% on average and reduces lending by a few percent; magnitudes differ across circulating versions, and the paper is not yet published (do not confuse it with Yang, TAR 2025).
 
 **Buesa, Población & Tarancón (JFSR 2023) — IFRS 9 versus CECL procyclicality.** Simulation on a corporate loan portfolio: IFRS 9 is less procyclical than IAS 39 but more procyclical than CECL, because IFRS 9's one-year horizon for stage 1 loans creates a cliff when loans migrate to lifetime provisioning in stage 2, whereas CECL provisions lifetime losses from day one. The length and shape of the cycle matter more under IFRS 9. Consistent with Abad & Suarez (2018), who reached the same ranking.
 
@@ -515,6 +515,7 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
   journal = {Journal of Financial Services Research},
   year    = {2023},
   volume  = {64},
+  number  = {3},
   pages   = {303--324},
   doi     = {10.1007/s10693-022-00392-1}
 }
@@ -526,7 +527,7 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
   year    = {2026},
   volume  = {70},
   pages   = {100865},
-  note    = {VERIFY: volume/year (one source lists vol. 51, 2025). SSRN 4710219; ScienceDirect PII S0882611025000604}
+  note    = {SSRN 4710219 (working-paper version, Jan 2024); ScienceDirect PII S0882611025000604}
 }
 
 %% ---- Working papers (SSRN and central-bank series) ----
@@ -641,9 +642,10 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
   title       = {From Incurred to Expected Loss: Implications for Bank Lending},
   institution = {CEMFI},
   type        = {Working Paper},
-  number      = {2025-2509},
+  number      = {2509},
   year        = {2025},
-  month       = may
+  month       = may,
+  note        = {RePEc handle cmf/wpaper/wp2025\_2509}
 }
 
 @techreport{CanalsCerda2024,
@@ -705,7 +707,7 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
 
 ## Post-Flight Verification
 
-**Round 2 (theory deep-dive, 10 claims):** PENDING — verifier running; this line will be replaced with the verdict.
+**Round 2 (theory deep-dive, 10 claims):** PASS — all ten theory papers located at the stated venues with matching volume, pages, DOI or working-paper number, and all reported findings supported by abstract text. Three low-severity notes applied: Lu & Zhang's comparative-statics wording now follows the published version; Huber's "larger gap in downturns" sub-claim dropped as unconfirmed; JFSR issue number and CEMFI paper number added. The verifier also confirmed Huber's paper is unpublished (R&R at JAR), so the 16% figure is cited to the SSRN working paper, not to a journal.
 
 **Round 1 (43 claims):** PARTIAL — 36 of 43 claims SUPPORTED as written; 3 corrected (C1 Mahieux et al. finding overstated, C8 author count, C23 journal year); 3 magnitude/detail claims softened (Huber version conflict, Jia et al. magnitudes, Yang loan-sale and Chen-Lin-Yang housing-boom secondary results); 2 author lists unresolved (JAPP 2025 management forecasts; Research Square 2026 mortgage preprint). **No fabricated citations found**: every paper, working paper, preprint and regulatory note was located at the named venue.
 
