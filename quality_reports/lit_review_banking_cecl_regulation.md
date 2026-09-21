@@ -144,9 +144,11 @@ Ordered roughly by relevance to "CECL regulation and banks." Publication status 
 
 ### Theoretical Contributions
 
+*See the Theory Deep-Dive section below for a paper-by-paper treatment.*
+
 - **Timeliness vs. accuracy and the capital-regulation interaction** (Mahieux, Sapra & Zhang 2023). Timely recognition is efficient when it enables intervention, but it changes ex ante origination incentives in a regime-dependent direction; capital requirements should fall with timelier provisioning only when early loss estimates are precise or risk-shifting incentives are mild. Related earlier models (Abad & Suarez 2018; Chae et al. 2018) are pre-window but remain the reference for procyclicality simulations.
 - **Forecast imperfection** (Vidinova 2023, SSRN 4628656, "Forward-Looking Loan Loss Provisioning under Imperfect Forecasts"; Bhojraj et al. 2025). If forecasts are noisy or biased, forward-looking provisioning can be *more* procyclical than incurred-loss provisioning.
-- **Structural quantification** (Huber 2022, SSRN 4120628). A structural bank model calibrated to U.S. data reports that CECL raises reserves and reduces lending; two circulating versions give different magnitudes (14.7% reserves / 5.16% lending in one, 16% / 3.15% in another), so cite the dated SSRN version explicitly.
+- **Structural quantification** (Huber 2022, SSRN 4120628; listed as R&R at JAR on the author's site). An estimated bank model reports that CECL raises reserves and reduces lending; two circulating versions give different magnitudes (14.7% reserves / 5.16% lending in one, 16% / 3.15% in another), so cite the dated SSRN version explicitly.
 - **Evergreening** (Eufinger, Ramirez-Chiang & Sakasai 2026, SSRN 7216299). ECL weakens banks' incentive to roll over loans to non-viable "zombie" firms because forward-looking provisions must be booked regardless; empirically, earlier IFRS 9 implementers cut lending growth to zombies.
 
 ### Empirical Findings
@@ -176,6 +178,56 @@ Ordered roughly by relevance to "CECL regulation and banks." Publication status 
 2. **Did information quality rise or fall?** Bank-level information production improved (Kim et al.), but external users (analysts, interviewees) report worse predictability; Wheeler (2025) reconciles part of this as a macro-vs-idiosyncratic composition shift.
 3. **How much discretion remains, and is it harmful?** European evidence says capital management survives ECL; U.S. evidence on post-model overlays ("Q-factors") under CECL is thin.
 4. **Should CECL enter the supervisory stress test?** The Federal Reserve's 2024–2025 stress-test proposals explicitly do *not* incorporate CECL, citing that the current allowance framework already projects four quarters ahead; industry analysis (BPI) argues incorporation would raise capital requirements via larger peak-to-trough declines.
+
+---
+
+## Theory Deep-Dive: What the Analytical Literature Says
+
+The theory literature on expected-loss provisioning is small (about ten papers) but has converged on a shared framework: provisioning rules matter because regulatory capital is computed from accounting numbers, so the timing and precision of loss recognition change *when* a regulator can intervene and *how* a bank chooses loans ex ante. Two families of models exist. Analytical accounting-theory models (Mahieux, Sapra & Zhang; Bertomeu, Mahieux & Sapra; Fleer; Lu & Zhang; Vidinova) isolate mechanisms in two- or three-period settings. Dynamic quantitative models (Goncharenko & Rauf; Abad, Ikeda & Suarez; Huber; Buesa, Población & Tarancón; Kund & Rugilo) calibrate or estimate the size of the procyclicality effect. The two families reach compatible conclusions, summarized after the papers.
+
+### The papers
+
+**Mahieux, Sapra & Zhang (JAR 2023) — the benchmark model.** A bank originates loans whose risk it can shift after origination; a regulator intervenes when accounting information reveals trouble. The incurred-loss (IL) model reports late but accurately; the expected-loss (EL) model reports early but noisily (the accuracy-versus-timeliness trade-off). Results: (i) EL prompts earlier corrective action in bad times, which curbs ex post asset substitution; (ii) anticipating that intervention, the bank changes its ex ante origination, and the direction is not fixed: EL can induce *either safer or riskier* loans; (iii) EL raises efficiency when banks are insufficiently capitalized or when intervention is likely to be effective, but *impairs* efficiency when banks are moderately capitalized and intervention is sufficiently costly; (iv) the regulator can restore efficiency by tailoring capital to loss information, and capital under CECL should be looser than under IL when early loss estimates are sufficiently precise and/or risk-shifting incentives are not too severe. The policy message is that CECL and capital regulation must be designed jointly.
+
+**Bertomeu, Mahieux & Sapra (TAR 2023) — accounting measurement and capital requirements as joint instruments.** The regulator cannot commit to ex ante efficient intervention and reacts to ex post accounting reports. Considered separately, capital requirements and accounting precision are substitutes (either can restrain risk). Considered jointly, they are complements: better expected-loss information lets the regulator set looser capital requirements and still achieve efficient credit decisions, which spurs lending. This is the formal basis for the claim, repeated in the CECL debate, that regulators should not simply layer CECL on top of unchanged Basel capital rules.
+
+**Fleer (JAPP 2025) — optimal recognition thresholds.** Models a bank that both supplies credit and provides liquidity to depositors. Recognizing significant lifetime expected losses disciplines ex ante risk-taking but can distort ex post liquidity provision (a loss report can trigger withdrawals). A unique conditionally optimal recognition threshold balances the two, and it depends on the bank's environment. The paper reads this as support for IFRS 9's principle-based "significant increase in credit risk" (SICR) trigger over a one-size-fits-all rule, and by implication as a caution against CECL's day-one lifetime recognition for every exposure.
+
+**Lu & Zhang (Advances in Accounting 2026) — time-varying capital ratios under CECL.** Chooses the capital ratio that maximizes the joint surplus of debtholders and equityholders when the regulator observes CECL reports. The optimal ratio depends on two cycle parameters: persistence of shocks to loan quality (asset side) and intertemporal change in deposit liquidity demand (liability side). For highly levered banks the optimal ratio is procyclical when prospects are rosy (anticipated upturn or persistent boom) and countercyclical when prospects are gloomy. The point for policy is that a static ratio is never optimal once provisions are forward-looking.
+
+**Vidinova (working paper, 2023) — CECL under behavioral forecasts.** Builds a model of provisions, lending, output and stability under CECL, first with rational expectations and then with forecasts shaped by the representativeness heuristic (overreaction to recent news). Overreaction produces under-provisioning, excess lending and risk-taking after good news and the reverse after bad news, so CECL becomes procyclical precisely because it loads on forecasts that cannot see cycle turns. The optimal minimum capital requirement is time-varying and tighter when default risk is high; with behavioral forecasts the constraint must bind even when equity is high and, holding true risk fixed, the optimal requirement falls in the bank's *perceived* risk (because over-pessimistic banks already over-provision). Bhojraj et al. (JAE forthcoming) supply the empirical counterpart: supervisory loss forecasts do overreact.
+
+**Goncharenko & Rauf (IJCB 2024) — "still too much, too late."** A dynamic model of a bank facing minimum capital regulation and taxes, where provisioning requirements change intertemporal trade-offs. If the bank cannot anticipate the downturn, it recognizes the bulk of expected losses only after the contraction arrives, which aggravates lending procyclicality and can worsen stability. Whether higher provisions reduce procyclicality depends on the cyclicality of the requirement itself and on the tax treatment of provisions. Effects are quantitatively significant in calibration. The title is the paper's verdict: EL does not by itself cure the "too little, too late" problem that motivated it.
+
+**Abad, Ikeda & Suarez (CEMFI WP 2025) — dynamic banking model with ratings migration.** Extends Abad & Suarez (2018) into a calibrated dynamic model with a recursive ratings-migration structure for loan quality. Quantifies the increase in lending's sensitivity to economic conditions after the switch to expected loss and evaluates Basel III's countercyclical capital buffer as an offset, finding non-trivial trade-offs rather than a free lunch. (Full quantitative results could not be retrieved in this environment; read the paper for the headline elasticities.)
+
+**Huber (working paper, 2022; R&R at JAR per author's site) — estimated model.** Develops and estimates a model of lending under accounting-based capital requirements, then counterfactually imposes CECL. CECL raises allowances relative to IL (about 16% in the version quoted by one source, with a larger gap in downturns) and reduces lending by a few percent; magnitudes differ across circulating versions.
+
+**Buesa, Población & Tarancón (JFSR 2023) — IFRS 9 versus CECL procyclicality.** Simulation on a corporate loan portfolio: IFRS 9 is less procyclical than IAS 39 but more procyclical than CECL, because IFRS 9's one-year horizon for stage 1 loans creates a cliff when loans migrate to lifetime provisioning in stage 2, whereas CECL provisions lifetime losses from day one. The length and shape of the cycle matter more under IFRS 9. Consistent with Abad & Suarez (2018), who reached the same ranking.
+
+**Kund & Rugilo (ECB WP 2023) — stress-test simulation.** Under EBA stress scenarios, IFRS 9's front-loading of losses hurts profitability and capital generation in the short run but removes the IAS 39 cliff effect, so resilience is higher in the long run and especially at the onset of a crisis.
+
+### Key findings across the theory literature
+
+1. **CECL is not a stand-alone improvement; it is half of a policy pair.** Every analytical paper finds that the welfare effect of moving to expected loss depends on how capital regulation responds. With unchanged capital rules, EL can reduce efficiency for moderately capitalized banks when intervention is costly (Mahieux et al.). With capital re-optimized to the new information, EL lets regulators set looser requirements and expand lending (Bertomeu et al.). The U.S. five-year transition relief is a phase-in, not the re-optimization these models call for.
+
+2. **Timeliness buys earlier intervention at the cost of precision and ex ante distortion.** The benefit of EL is ex post: earlier corrective action. The costs are ex ante: noisier reports and altered origination incentives whose sign is ambiguous. Which dominates is an empirical question about capitalization, intervention cost, and forecast precision, which is why the empirical procyclicality results are heterogeneous by bank capital.
+
+3. **Procyclicality under EL is a statement about forecastability, not about the standard.** With rational, informative forecasts, EL smooths losses into the expansion. If downturns are unanticipated (Goncharenko & Rauf) or forecasts overreact to recent news (Vidinova), lifetime provisions are booked into the contraction and EL amplifies the cycle. The 2020 experience, where provisions spiked in Q1–Q2 and reversed in 2021, is the case these models predict.
+
+4. **Optimal capital under CECL is state-contingent.** Vidinova, Lu & Zhang, and Abad, Ikeda & Suarez all derive time-varying capital as the complement to forward-looking provisions, with the direction depending on cycle persistence and on whether bank beliefs are rational. This connects the CECL literature to the countercyclical-buffer literature and to the Fed's open decision on incorporating CECL into the stress capital buffer.
+
+5. **Recognition design matters: staging versus day-one lifetime loss.** IFRS 9's staging is more procyclical than CECL in simulations (Buesa et al.; Abad & Suarez) because of the stage-2 cliff, but Fleer shows a bank-specific recognition threshold can be optimal when loss reports affect depositor behavior. The trade-off between a smoother aggregate profile (CECL) and a threshold tailored to the bank's liquidity role (IFRS 9) has not been resolved in a single model.
+
+6. **Risk-taking effects are ambiguous in sign.** Contrary to the intuition that forward-looking provisioning always disciplines lending, EL can induce riskier origination when the bank anticipates a lenient or costly intervention regime (Mahieux et al.). Evergreening incentives, by contrast, fall unambiguously under EL because rolling over a distressed loan no longer delays recognition (the mechanism tested by Eufinger et al. 2026).
+
+### What theory has not yet modelled
+
+- **Managerial discretion and overlays.** The models treat the EL report as a noisy but unbiased signal. None models the bank choosing the bias (qualitative factors, macro-scenario weights), which is exactly what the European evidence (Behn & Couaillier 2026) says happens.
+- **Bank runs and disclosure of expected losses.** Fleer is the only paper with a liquidity-provision channel; a full global-games treatment of lifetime-loss disclosure and depositor runs is missing.
+- **Competition and market structure.** All models have a single bank; the empirical finding that CECL costs fall on opaque, bank-dependent borrowers suggests a lending-market model is needed.
+- **Heterogeneous banks and adoption timing.** No model explains why the 2020 adoption choice was endogenous to pandemic exposure (Aaron et al. 2025).
+- **Stress tests.** No theory paper models CECL allowances inside a supervisory stress test with a stress capital buffer, although this is the live U.S. policy question.
 
 ---
 
@@ -435,6 +487,48 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
   note    = {VERIFY: authors, volume, article number. ScienceDirect PII S0278425425000882}
 }
 
+@article{BertomeuMahieuxSapra2023,
+  author  = {Bertomeu, Jeremy and Mahieux, Lucas and Sapra, Haresh},
+  title   = {Interplay between Accounting and Prudential Regulation},
+  journal = {The Accounting Review},
+  year    = {2023},
+  volume  = {98},
+  number  = {1},
+  pages   = {29--53},
+  note    = {SSRN 3266348}
+}
+
+@article{GoncharenkoRauf2024,
+  author  = {Goncharenko, Roman and Rauf, Asad},
+  title   = {Still ``Too Much, Too Late'': Provisioning for Expected Loan Losses},
+  journal = {International Journal of Central Banking},
+  year    = {2024},
+  volume  = {20},
+  number  = {4},
+  pages   = {415--474},
+  note    = {SSRN 3247631. Earlier title: ``Loan Loss Provisioning Requirements in a Dynamic Model of Banking''}
+}
+
+@article{BuesaPoblacionTarancon2023,
+  author  = {Buesa, Alejandro and Poblaci{\'o}n, Javier and Taranc{\'o}n, Javier},
+  title   = {The Procyclicality of Impairment Accounting: Comparing Expected Losses under {IFRS} 9 and {US GAAP}},
+  journal = {Journal of Financial Services Research},
+  year    = {2023},
+  volume  = {64},
+  pages   = {303--324},
+  doi     = {10.1007/s10693-022-00392-1}
+}
+
+@article{LuZhang2026,
+  author  = {Lu, Tong and Zhang, Lanyi Yan},
+  title   = {Time-Varying Capital Ratios under {CECL}},
+  journal = {Advances in Accounting},
+  year    = {2026},
+  volume  = {70},
+  pages   = {100865},
+  note    = {VERIFY: volume/year (one source lists vol. 51, 2025). SSRN 4710219; ScienceDirect PII S0882611025000604}
+}
+
 %% ---- Working papers (SSRN and central-bank series) ----
 
 @unpublished{BhojrajKleymenovaLiuLuSengupta2025,
@@ -504,7 +598,7 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
   author = {Huber, Stefan},
   title  = {Loan Loss Measurement and Bank Lending},
   year   = {2022},
-  note   = {SSRN 4120628. Two versions circulate with different magnitudes (14.7\%/5.16\% vs 16\%/3.15\%); cite the dated version}
+  note   = {SSRN 4120628. R\&R at Journal of Accounting Research per author's website. Two versions circulate with different magnitudes (14.7\%/5.16\% vs 16\%/3.15\%); cite the dated version}
 }
 
 @unpublished{Vidinova2023,
@@ -540,6 +634,16 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
   title  = {Spillover Effects of Timelier Loan Loss Recognition by Banks on Borrowers' Cross-Border Borrowing},
   year   = {2025},
   note   = {SSRN 4958491, posted May 2025}
+}
+
+@techreport{AbadIkedaSuarez2025,
+  author      = {Abad, Jorge and Ikeda, Daisuke and Suarez, Javier},
+  title       = {From Incurred to Expected Loss: Implications for Bank Lending},
+  institution = {CEMFI},
+  type        = {Working Paper},
+  number      = {2025-2509},
+  year        = {2025},
+  month       = may
 }
 
 @techreport{CanalsCerda2024,
@@ -601,7 +705,9 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
 
 ## Post-Flight Verification
 
-**Status:** PARTIAL — 36 of 43 claims SUPPORTED as written; 3 corrected (C1 Mahieux et al. finding overstated, C8 author count, C23 journal year); 3 magnitude/detail claims softened (Huber version conflict, Jia et al. magnitudes, Yang loan-sale and Chen-Lin-Yang housing-boom secondary results); 2 author lists unresolved (JAPP 2025 management forecasts; Research Square 2026 mortgage preprint). **No fabricated citations found**: every paper, working paper, preprint and regulatory note was located at the named venue.
+**Round 2 (theory deep-dive, 10 claims):** PENDING — verifier running; this line will be replaced with the verdict.
+
+**Round 1 (43 claims):** PARTIAL — 36 of 43 claims SUPPORTED as written; 3 corrected (C1 Mahieux et al. finding overstated, C8 author count, C23 journal year); 3 magnitude/detail claims softened (Huber version conflict, Jia et al. magnitudes, Yang loan-sale and Chen-Lin-Yang housing-boom secondary results); 2 author lists unresolved (JAPP 2025 management forecasts; Research Square 2026 mortgage preprint). **No fabricated citations found**: every paper, working paper, preprint and regulatory note was located at the named venue.
 
 <details>
 <summary>Verifier method and per-claim outcome</summary>
