@@ -231,6 +231,51 @@ The theory literature on expected-loss provisioning is small (about ten papers) 
 
 ---
 
+## The Regulator's Perspective on the Switch to Expected-Loss Accounting
+
+Bank regulators are not neutral observers of CECL and IFRS 9. They asked for forward-looking provisioning after the 2008 crisis, they write the capital rules that turn an accounting allowance into a binding constraint, and they have spent 2016–2026 managing the side effects of the change they requested. Their perspective has three layers: the prudential case for the standard, the policy tools they used to cushion it, and the supervisory concerns that replaced the original debate once the standard was live.
+
+### 1. Why prudential regulators wanted expected-loss accounting
+
+The incurred-loss model's "too little, too late" provisioning in 2007–09 is the origin story that every regulatory document repeats. Post-crisis, the G20, the Financial Stability Board and bank supervisors asked standard setters for provisioning that used forward-looking information; FASB's June 2016 standard and the IASB's IFRS 9 were the responses. The Basel Committee's March 2017 statement is the clearest expression of the prudential view: it "supports the use of ECL accounting approaches and encourages their application to achieve earlier recognition of credit losses than incurred loss models while providing incentives for sound credit risk management practices." The IMF's 2026 technical note for supervisors says the same in retrospect: bringing forward loss recognition "has long been supported by banking supervisors" because it reduces the overstatement of capital in good times and strengthens loss-absorbing capacity. The U.S. agencies' June 17, 2016 joint statement took a facilitating stance, stressing that the standard applies to institutions of every size, allows multiple estimation methods, and is scalable.
+
+### 2. The U.S. banking agencies: cushion the capital effect, insulate the stress test, monitor
+
+The Federal Reserve, FDIC, OCC and NCUA have consistently separated the accounting change from its regulatory-capital consequences rather than re-designing capital around the new information.
+
+- **Capital phase-in (2019).** The February 2019 final rule let banks phase the day-one CET1 hit in at 25 percent per year over three years.
+- **Pandemic relief (2020).** The March 2020 interim final rule (finalized August 2020) allowed 2020 adopters to defer CECL's estimated capital effect for two years, then phase it in over three, a five-year path in total. The stated rationale was to let banks "better focus on supporting lending to creditworthy households and businesses" while "maintaining the quality of regulatory capital." The agencies also issued the May 2020 Interagency Policy Statement on Allowances for Credit Losses, which sets supervisory expectations for CECL processes, documentation, validation and board oversight.
+- **Stress-test insulation (2018–2025).** In December 2018 the Fed announced it would not change its CCAR allowance framework through 2021 in order to "gather additional information on the impact of CECL." In December 2021 it extended that stance through the 2023 cycle, explaining that because the supervisory projection starts from a firm's actual beginning-of-horizon allowance, the framework "will continue to largely offset the impact" of CECL; the aggregate CECL transition add-back in that cycle was about $28 billion, or 0.3 percent of risk-weighted assets. In October 2024 and again in the November 2025 stress-test transparency proposal, the Board stated it is "not proposing to implement CECL into the supervisory stress testing framework," noting that its allowance model already projects provisions four quarters ahead. The result is that the stress capital buffer, the binding capital constraint for large banks, is still computed on a non-CECL allowance path.
+- **Monitoring and research.** The Fed's own post-mortem (Loudis et al., FEDS Notes 2021) reported that adopters' allowances jumped 37 percent on day one and 76 percent in the first half of 2020, that provisioning was more responsive to the outlook, and that there was "limited evidence" of reduced lending except in consumer credit. Federal Reserve economists' subsequent work is broadly favorable on information benefits (Kim, Kim, Kleymenova & Li, FEDS 2023) and cautious on model risk (Canals-Cerdá, Philadelphia Fed 2024/2026). The Atlanta Fed's 2019 review characterized the pre-adoption procyclicality evidence as mixed and model-dependent. The Kansas City Fed's August 2023 bulletin found a modest 3.76 percent average allowance increase at community banks on 2023 adoption.
+
+Within the agencies, the deposit insurer and the credit-union regulator were the skeptics for small institutions. On March 19, 2020, FDIC Chairman Jelena McWilliams wrote to FASB asking it to let current adopters postpone CECL and to impose a moratorium for institutions not yet subject to it. On April 30, 2020, NCUA Chairman Rodney Hood asked FASB to exempt credit unions outright, arguing that "the compliance costs associated with implementing CECL overwhelmingly exceed the benefits." Neither request was granted, but FASB deferred the small-entity effective date to 2023, and the NCUA's July 2021 rule phased the day-one net-worth effect in over three years and exempted credit unions under $10 million from GAAP allowance accounting.
+
+### 3. Treasury and Congress: delay, study, and "not feasible to assess"
+
+Congress's concern was credit availability and community-bank burden. H.R. 3182 (2019), a bipartisan bill to delay CECL pending a consumer-impact study, died in committee. Section 4014 of the CARES Act (March 2020) then gave banks an optional delay, later extended by the Consolidated Appropriations Act, 2021 to January 1, 2022, and required a Treasury study. Treasury's September 15, 2020 report concluded that "a definitive assessment of the impact of CECL on financial institutions' regulatory capital is not feasible at this time" and recommended that regulators "continue to monitor the effects of the standard on regulatory capital and financial institution lending practices, and calibrate capital requirements, as necessary." That recommendation, to recalibrate capital in light of CECL, has not been acted on beyond the transition provisions.
+
+### 4. International regulators: same support, same cushioning, sharper follow-up
+
+- **Basel Committee.** In March 2017 the Committee retained the existing regulatory treatment of provisions as an "interim" approach while it considered a longer-term treatment, and permitted jurisdictions to adopt transitional arrangements. The long-term treatment was never finalized; the interim approach persists. On April 3, 2020, the Committee allowed jurisdictions to reset transitional arrangements so that banks could add back increases in ECL provisions on non-credit-impaired assets to CET1 through 2024, while reiterating that ECL frameworks "are not designed to be applied mechanistically."
+- **European Union.** The CRR "quick fix" (Regulation (EU) 2020/873, June 2020) let banks add back 100 percent of new stage-1 and stage-2 provisions recognized in 2020–21, phasing out linearly by 2025. The ESRB's 2017 and 2019 reports supported ECL for financial stability "if soundly implemented" but flagged procyclicality from stage transfers, over-weighting of the baseline macro scenario, and weak incentives to update forecasts. The EBA's November 2023 monitoring report found that ECL models now recognize losses earlier but that overlays "are becoming an integral part of the ECL framework" and need tighter governance, that SICR practices diverge, and that backtesting is weak. The ECB's 2023 Financial Stability Review box and its July 2024 report on overlays for novel risks concluded that less-capitalized banks provision less for the same exposures and that many banks make insufficient or no provisions for novel risks such as geopolitical and climate risk.
+- **United Kingdom.** The Bank of England runs its stress test on an IFRS 9 transitional basis with hurdle-rate adjustments, instructs banks to assume perfect foresight of the scenario when computing provisions, and explicitly recognizes that IFRS 9 can produce large early capital drawdowns in a real stress.
+- **IMF (2026).** The IMF technical note distills the supervisory playbook for jurisdictions still implementing ECL: a transition period, proportionality, keeping regulatory provisioning as a prudential backstop until supervisors have experience with IFRS 9, and parallel runs.
+- **Standard setters' reviews.** The IASB's July 2024 post-implementation review concluded that IFRS 9's impairment requirements are "working as intended," with targeted disclosure improvements. FASB's post-implementation review of CECL is ongoing; in response to private-company feedback that macroeconomic forecasting is costly and immaterial for short-term receivables, FASB issued ASU 2025-05 with practical expedients, and earlier removed the troubled-debt-restructuring designation and is revisiting purchased-credit-deteriorated accounting.
+
+### 5. Reading the regulatory record against the academic literature
+
+1. **Regulators wanted the standard and still defend the principle.** No prudential regulator has retreated from the case for forward-looking provisioning. The IASB's "working as intended" verdict and the Basel Committee's continued endorsement bracket the debate.
+
+2. **Their response was to decouple accounting from capital, not to re-optimize capital.** Every intervention, the three-year phase-in, the pandemic add-backs in the U.S. and EU, and the Fed's decision to keep CECL out of the stress capital buffer, insulates regulatory capital from the new allowance. This is the second-best policy in the theory literature: Bertomeu, Mahieux & Sapra (TAR 2023) and Mahieux, Sapra & Zhang (JAR 2023) show that the efficient response to better expected-loss information is to recalibrate capital requirements jointly with the accounting change. Treasury recommended exactly that in 2020; the Basel Committee's "interim" treatment is now nine years old.
+
+3. **The supervisory concern has shifted from capital cliffs to discretion and model quality.** The 2016–2020 debate was about day-one capital effects and lending; the 2021–2026 supervisory output (EBA 2023, ECB 2023 and 2024, Fed and Philadelphia Fed research) is about overlays, staging judgments, backtesting, and novel risks. This tracks the academic finding that discretion survives the switch (Behn & Couaillier 2026; Novotny-Farkas et al. 2024).
+
+4. **The regulators' empirical read is milder than the academic one.** The Fed's 2021 note found limited lending effects; Treasury found the question unanswerable. The top-journal evidence published since (Chen, Dou, Ryan & Zou 2025; Yang 2025; Granja & Nagel 2025; Ertan 2025) finds contraction concentrated in low-capital banks and opaque borrowers. Part of the gap is timing, since the academic papers use longer panels and loan-level data, and part is that the pandemic relief the regulators themselves granted muted the effect they were measuring.
+
+5. **The regulatory community is not monolithic.** Prudential supervisors of large banks (Fed, OCC, Basel, ECB) are supportive; the FDIC and NCUA leadership in 2020 sought delay or exemption for small institutions; FASB has since eased the standard for private companies. The dividing line is institution size, which matches the academic evidence that CECL's costs fall on small, information-constrained lenders and borrowers.
+
+---
+
 ## Gaps and Opportunities
 
 1. **The 2023 adoption wave is under-studied.** Roughly all remaining U.S. banks adopted on 1 Jan 2023 in a non-crisis, rising-rate environment. Only descriptive work (KC Fed 2023; He et al. 2025) exists. A DiD around 2023 with 2020 adopters as controls would separate CECL's effect from COVID and from the CARES selection problem.
@@ -701,11 +746,197 @@ Entries marked `note = {VERIFY: ...}` have details taken from search snippets th
   year         = {2026},
   note         = {VERIFY: author, date; preliminary, not peer reviewed}
 }
+%% ---- Regulatory and policy documents ----
+
+@misc{AgenciesJointStatement2016,
+  author       = {{Board of Governors of the Federal Reserve System and FDIC and NCUA and OCC}},
+  title        = {Joint Statement on the New Accounting Standard on Financial Instruments -- Credit Losses},
+  howpublished = {Interagency statement},
+  month        = jun,
+  day          = {17},
+  year         = {2016}
+}
+
+@misc{AgenciesCECLCapitalRule2019,
+  author       = {{OCC and Board of Governors of the Federal Reserve System and FDIC}},
+  title        = {Regulatory Capital Rule: Implementation and Transition of the Current Expected Credit Losses Methodology for Allowances},
+  howpublished = {Federal Register, final rule},
+  month        = feb,
+  day          = {14},
+  year         = {2019}
+}
+
+@misc{AgenciesCECLTransitionIFR2020,
+  author       = {{OCC and Board of Governors of the Federal Reserve System and FDIC}},
+  title        = {Regulatory Capital Rule: Revised Transition of the Current Expected Credit Losses Methodology for Allowances},
+  howpublished = {Interim final rule (March 2020); final rule, Federal Register 85 FR 61577},
+  month        = sep,
+  day          = {30},
+  year         = {2020}
+}
+
+@misc{InteragencyACLPolicy2020,
+  author       = {{Board of Governors of the Federal Reserve System and FDIC and NCUA and OCC}},
+  title        = {Interagency Policy Statement on Allowances for Credit Losses},
+  howpublished = {Federal Register 85 FR 32991},
+  month        = jun,
+  day          = {1},
+  year         = {2020}
+}
+
+@misc{FedCECLStressTest2018,
+  author       = {{Board of Governors of the Federal Reserve System}},
+  title        = {Statement on the Current Expected Credit Loss Methodology ({CECL}) and Stress Testing},
+  month        = dec,
+  day          = {21},
+  year         = {2018}
+}
+
+@misc{FedCECLStressTest2021,
+  author       = {{Board of Governors of the Federal Reserve System}},
+  title        = {Public Statement on the Treatment of {CECL} in the Supervisory Stress Test},
+  month        = dec,
+  day          = {9},
+  year         = {2021}
+}
+
+@misc{FedStressTestNPR2025,
+  author       = {{Board of Governors of the Federal Reserve System}},
+  title        = {Enhanced Transparency and Public Accountability of the Supervisory Stress Test Models and Scenarios; Modifications to the Capital Planning and Stress Capital Buffer Requirement Rule},
+  howpublished = {Federal Register, notice of proposed rulemaking, 2025-20211},
+  month        = nov,
+  day          = {18},
+  year         = {2025}
+}
+
+@misc{Treasury2020CECL,
+  author       = {{U.S. Department of the Treasury}},
+  title        = {The Current Expected Credit Loss Accounting Standard and Financial Institution Regulatory Capital},
+  howpublished = {Study required by Section 4014 of the CARES Act},
+  month        = sep,
+  day          = {15},
+  year         = {2020}
+}
+
+@misc{McWilliams2020FASB,
+  author       = {McWilliams, Jelena},
+  title        = {Letter to the Financial Accounting Standards Board on {COVID-19} relief, troubled debt restructurings, and {CECL}},
+  howpublished = {FDIC},
+  month        = mar,
+  day          = {19},
+  year         = {2020}
+}
+
+@misc{Hood2020FASB,
+  author       = {Hood, Rodney E.},
+  title        = {Letter to the Financial Accounting Standards Board requesting exemption of credit unions from {CECL}},
+  howpublished = {NCUA},
+  month        = apr,
+  day          = {30},
+  year         = {2020}
+}
+
+@misc{NCUACECLRule2021,
+  author       = {{National Credit Union Administration}},
+  title        = {Transition to the Current Expected Credit Loss Methodology},
+  howpublished = {Federal Register, final rule},
+  month        = jul,
+  day          = {1},
+  year         = {2021}
+}
+
+@misc{CRS2018CECL,
+  author       = {{Congressional Research Service}},
+  title        = {Banking: Current Expected Credit Loss ({CECL})},
+  howpublished = {CRS Report R45339},
+  month        = oct,
+  year         = {2018}
+}
+
+@misc{BCBS2017Provisions,
+  author       = {{Basel Committee on Banking Supervision}},
+  title        = {Regulatory Treatment of Accounting Provisions -- Interim Approach and Transitional Arrangements},
+  howpublished = {BIS, d401},
+  month        = mar,
+  year         = {2017}
+}
+
+@misc{BCBS2020Covid,
+  author       = {{Basel Committee on Banking Supervision}},
+  title        = {Measures to Reflect the Impact of {Covid-19}},
+  howpublished = {BIS, d498},
+  month        = apr,
+  day          = {3},
+  year         = {2020}
+}
+
+@misc{EUCRRQuickFix2020,
+  author       = {{European Parliament and Council}},
+  title        = {Regulation ({EU}) 2020/873 amending Regulations ({EU}) No 575/2013 and ({EU}) 2019/876 as regards certain adjustments in response to the {COVID-19} pandemic},
+  howpublished = {Official Journal of the European Union},
+  month        = jun,
+  day          = {26},
+  year         = {2020}
+}
+
+@misc{ESRB2019ECL,
+  author       = {{European Systemic Risk Board}},
+  title        = {The Cyclical Behaviour of the {ECL} Model in {IFRS} 9},
+  month        = mar,
+  year         = {2019}
+}
+
+@misc{EBA2023IFRS9,
+  author       = {{European Banking Authority}},
+  title        = {{IFRS} 9 Implementation by {EU} Institutions: Monitoring Report},
+  month        = nov,
+  year         = {2023}
+}
+
+@misc{ECB2024Overlays,
+  author       = {{European Central Bank Banking Supervision}},
+  title        = {{IFRS} 9 Overlays and Model Improvements for Novel Risks},
+  month        = jul,
+  year         = {2024}
+}
+
+@misc{IASB2024PIR,
+  author       = {{International Accounting Standards Board}},
+  title        = {Post-implementation Review of {IFRS} 9 Financial Instruments -- Impairment: Project Summary and Feedback Statement},
+  month        = jul,
+  year         = {2024}
+}
+
+@techreport{IMF2026IFRS9,
+  author      = {{International Monetary Fund}},
+  title       = {{IFRS} 9 Implementation from the Perspective of Banking Supervisors},
+  institution = {International Monetary Fund},
+  type        = {Technical Notes and Manuals},
+  number      = {2026/004},
+  year        = {2026}
+}
+
+@misc{Wall2019AtlantaFed,
+  author       = {Wall, Larry D.},
+  title        = {Procyclicality: {CECL} versus Incurred Loss Model},
+  howpublished = {Federal Reserve Bank of Atlanta, Notes from the Vault},
+  month        = oct,
+  year         = {2019}
+}
+
+@misc{FASB2025ASU05,
+  author       = {{Financial Accounting Standards Board}},
+  title        = {Accounting Standards Update 2025-05, Financial Instruments -- Credit Losses (Topic 326): Measurement of Credit Losses for Accounts Receivable and Contract Assets},
+  year         = {2025}
+}
+
 ```
 
 ---
 
 ## Post-Flight Verification
+
+**Round 3 (regulator's perspective):** PENDING — verifier running on the regulatory-document claims; this line will be replaced with the verdict.
 
 **Round 2 (theory deep-dive, 10 claims):** PASS — all ten theory papers located at the stated venues with matching volume, pages, DOI or working-paper number, and all reported findings supported by abstract text. Three low-severity notes applied: Lu & Zhang's comparative-statics wording now follows the published version; Huber's "larger gap in downturns" sub-claim dropped as unconfirmed; JFSR issue number and CEMFI paper number added. The verifier also confirmed Huber's paper is unpublished (R&R at JAR), so the 16% figure is cited to the SSRN working paper, not to a journal.
 
