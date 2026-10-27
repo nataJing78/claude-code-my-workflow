@@ -1,0 +1,296 @@
+% Model section for a search-and-matching model of loan contract design
+% (spread + covenant tightness), structured after Section 3 of
+% Ewens, Gorbenko and Korteweg (2022, JFE), "Venture Capital Contracts".
+% Compile standalone with: xelatex model_setup.tex  (or pdflatex)
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{natbib}
+\usepackage{hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathrm{Pr}}
+\newcommand{\RB}{R_B}
+\newcommand{\RP}{R_P}
+
+\begin{document}
+
+\section{Model}
+\label{sec:model}
+
+We specify a dynamic search-and-matching model of the market for bank loans
+in which a lender and a borrower who meet negotiate a loan contract consisting
+of an interest-rate spread and a covenant package. The structure follows
+\citet{ewens2022} (hereafter EGK): agents on both sides of the market are
+heterogeneous in quality, search is random and time-consuming, the lender
+makes a take-it-or-leave-it offer, and the borrower's bargaining power arises
+endogenously from the option to reject and continue searching. The model is
+designed to address the identification problem that arises because loan terms
+are chosen jointly with the identity of the counterparty: a regression of
+outcomes on contract terms is contaminated by the unobserved qualities of the
+bank and of the project that drove both the match and the terms.
+
+\subsection{Setup}
+\label{sec:setup}
+
+Time is continuous and the horizon is infinite. Two populations of agents
+search for each other: banks and projects (equivalently, project owners or
+borrowers). There are $m_B$ banks and $m_P$ projects actively searching at any
+point in time.
+
+\paragraph{Types.}
+Each bank is characterized by a quality $i$ and each project by a quality $j$.
+Qualities are drawn independently from Beta distributions,
+\begin{equation}
+  i \sim \mathrm{Beta}(a_i, b_i), \qquad j \sim \mathrm{Beta}(a_j, b_j),
+  \label{eq:types}
+\end{equation}
+rescaled to the support $[0, \bar{q}]$, with cumulative distribution functions
+$F_B(i)$ and $F_P(j)$. The parameters $(a_i, b_i)$ and $(a_j, b_j)$ describe
+the shape of the two quality distributions. Types are fixed over time and are
+observed by both parties upon meeting, but are unobserved by the
+econometrician.
+
+\paragraph{Project cash flow.}
+A project requires one unit of external financing and produces a terminal
+cash flow $Y$ at the end of the loan period. Cash flow is log-normally
+distributed,
+\begin{equation}
+  \log Y = \log j + \epsilon - \tfrac{1}{2}\,\sigma(i,j)^2,
+  \qquad \epsilon \sim \mathcal{N}\!\left(0, \sigma(i,j)^2\right),
+  \label{eq:cashflow}
+\end{equation}
+so that expected cash flow equals project quality, $\E[Y] = j$. The
+profitability shock $\epsilon$ is realized after the contract is signed. Its
+volatility depends on the qualities of both parties,
+\begin{equation}
+  \sigma(i,j) = \sigma_0 + w \exp(-i) + (1-w) \exp(-j),
+  \label{eq:sigma}
+\end{equation}
+where $\sigma_0 > 0$ is a baseline volatility and $w \in [0,1]$ governs the
+relative contribution of bank quality (through screening and monitoring) and
+project quality to cash-flow risk. A higher-quality bank or project lowers
+the volatility of cash flow but, by construction, leaves its mean unchanged.
+
+\paragraph{Search.}
+A bank meets a project at Poisson rate $\lambda_B$, and a project meets a bank
+at Poisson rate $\lambda_P$. Search is undirected: the type of the
+counterparty is an independent draw from $F_P$ (for a bank) or $F_B$ (for a
+project), and does not depend on the searcher's own type. Agents discount the
+future at rate $r$, which we also take to be the risk-free (LIBOR) rate. Upon
+meeting, the two parties either sign a contract and exit the market, or part
+ways and continue searching. Matched agents are replaced by new entrants of
+the same type so that the type distributions of searching agents are
+stationary.\footnote{As in EGK, stationarity requires that the flow of
+matches is balanced across the two sides, $\lambda_B m_B p_B = \lambda_P m_P
+p_P$, where $p_B$ and $p_P$ are the average match probabilities per meeting
+on each side.}
+
+\subsection{Loan contracts and payoffs}
+\label{sec:contracts}
+
+\paragraph{Contract.}
+Upon meeting, bank $i$ offers project $j$ a loan contract
+\begin{equation}
+  c = (s, k), \qquad s \ge 0,\; k \in [0,1],
+  \label{eq:contract}
+\end{equation}
+where $s$ is the all-in-drawn spread over the risk-free rate and $k$ is the
+covenant tightness. The loan has face value one, so the contractual repayment
+at maturity is
+\begin{equation}
+  D(s) = 1 + r + s.
+  \label{eq:repayment}
+\end{equation}
+
+\paragraph{Default.}
+Two events transfer control rights to the bank. Economic default occurs when
+cash flow is insufficient to repay the loan,
+\begin{equation}
+  P_E(i,j,s) = \Prob\!\left[Y < D(s)\right]
+  = \Phi\!\left(\frac{\log D(s) - \log j + \tfrac{1}{2}\sigma(i,j)^2}{\sigma(i,j)}\right),
+  \label{eq:PE}
+\end{equation}
+where $\Phi$ is the standard normal distribution function. Technical default
+occurs when a covenant is violated. Covenant tightness is defined, as in the
+empirical literature, as the ex-ante probability of violation, so that
+\begin{equation}
+  P_T = k .
+  \label{eq:PT}
+\end{equation}
+Conditional on the project being solvent, technical default is independent of
+the realization of $Y$. The overall probability that control rights transfer
+to the bank is therefore
+\begin{equation}
+  P_E + (1 - P_E)\, P_T .
+  \label{eq:control}
+\end{equation}
+
+\paragraph{Recovery technology.}
+Covenants raise the fraction of project value the bank recovers in economic
+default,
+\begin{equation}
+  \theta(k) = \underline{\theta} + \left(\bar{\theta} - \underline{\theta}\right)
+  \left(1 - \exp(-\eta\, k)\right),
+  \label{eq:theta}
+\end{equation}
+where $\underline{\theta}$ is the baseline recovery rate with no covenants,
+$\bar{\theta}$ is the maximum attainable recovery rate, and $\eta > 0$
+governs how quickly tighter covenants raise recovery. When a solvent project
+violates a covenant, the bank takes control and a fraction $1 - \theta_T$ of
+project value is lost; $\theta_T \in (0,1]$ is the retention rate after
+technical default.
+
+\paragraph{Payoffs.}
+Given a match $(i,j)$ and a contract $c = (s,k)$, the bank's expected payoff
+on the loan is
+\begin{equation}
+  \E[\RB(i,j,c)] = (1 - P_E)\Big[(1 - P_T)\,D
+    + P_T\, \E\!\left[\min\{\theta_T Y, D\}\,\middle|\, Y > D\right]\Big]
+    + P_E\, \E\!\left[\theta(k)\, Y \,\middle|\, Y < D\right],
+  \label{eq:RB}
+\end{equation}
+and the project owner's expected payoff is
+\begin{equation}
+  \E[\RP(i,j,c)] = (1 - P_E)\Big[(1 - P_T)\,\E\!\left[Y - D \,\middle|\, Y > D\right]
+    + P_T\, \E\!\left[\max\{\theta_T Y - D, 0\} \,\middle|\, Y > D\right]\Big].
+  \label{eq:RP}
+\end{equation}
+The owner is protected by limited liability and receives nothing in economic
+default. Summing the two payoffs,
+\begin{equation}
+  \E[\RB] + \E[\RP] = \E[Y]
+    - (1-P_E) P_T\, \E\!\left[(1-\theta_T) Y \,\middle|\, Y > D\right]
+    - P_E\, \E\!\left[(1-\theta(k)) Y \,\middle|\, Y < D\right],
+  \label{eq:surplus}
+\end{equation}
+so total match surplus equals expected cash flow net of the deadweight losses
+incurred in the two control-transfer states. The contract determines both the
+size of this surplus, through $P_E(s)$, $P_T = k$, and $\theta(k)$, and its
+division between the two parties. Because $Y$ is log-normal, every
+conditional expectation in \eqref{eq:RB}--\eqref{eq:surplus} has a closed
+form, so payoffs can be evaluated without simulation.
+
+\subsection{Matching and the contract decision}
+\label{sec:matching}
+
+\paragraph{Outside options.}
+Let $V_B(i)$ denote the value to a bank of type $i$ of continuing to search,
+and $V_P(j)$ the corresponding value for a project of type $j$. A bank can
+always invest in the risk-free asset, so its outside option in a meeting is
+$\max\{V_B(i),\, 1 + r\}$. A project is fully externally financed; if the
+owner rejects an offer he receives nothing in the current period and
+continues searching, so his outside option is $V_P(j)$.
+
+\paragraph{Acceptance.}
+When bank $i$ and project $j$ meet, the pair draws a common match-specific
+taste shock $\xi \sim \mathcal{N}(0, \sigma_\xi^2)$, independent of types and
+of the cash-flow shock. The match is consummated under contract $c$ if both
+parties' surpluses, augmented by the taste shock, are positive. The
+probability that a match forms is therefore
+\begin{equation}
+  P(i,j,c) = \Phi\!\left(\frac{\min\Big\{\E[\RB(i,j,c)] - \max\{V_B(i), 1+r\},\;
+     \E[\RP(i,j,c)] - V_P(j)\Big\}}{\sigma_\xi}\right).
+  \label{eq:P}
+\end{equation}
+The taste shock plays the role of EGK's match-specific shock: it smooths the
+acceptance decision, so that the match probability is a continuous function
+of the contract and of the model parameters, and it allows the model to
+generate dispersion in contract terms within a type pair.\footnote{The
+shock is drawn after the contract is offered and is not contractible, so it
+does not enter the contract decision in \eqref{eq:cstar} except through
+$P(i,j,c)$. The parameter $\sigma_\xi$ is a scale parameter: it measures the
+magnitude of the non-pecuniary component of a match relative to the
+pecuniary surplus.}
+
+\paragraph{Contract choice.}
+The bank proposes the contract. Anticipating the acceptance probability
+\eqref{eq:P}, bank $i$ chooses the contract that maximizes its expected value
+from the meeting,
+\begin{equation}
+  c^*(i,j) = (s^*, k^*) = \arg\max_{(s,k)}\;
+  P(i,j,c)\, \E[\RB(i,j,c)] + \big(1 - P(i,j,c)\big) \max\{V_B(i), 1 + r\}.
+  \label{eq:cstar}
+\end{equation}
+% NOTE: the working draft (eq. 14) writes the argmax over the project owner's
+% objective, P * E[R_P] + (1-P) * V_P. That objective would be solved by the
+% borrower. Since the bank proposes (as in EGK, where the VC proposes), the
+% objective must be the bank's. Change the text above if the intended
+% proposer is the borrower.
+The bank trades off a larger share of surplus, obtained through a higher
+spread and tighter covenants, against a lower probability that the project
+accepts and against the surplus destroyed by a higher default probability and
+a higher incidence of control transfer. The project's bargaining power arises
+entirely from its outside option $V_P(j)$: a project that expects to meet a
+better bank soon demands more surplus today. Denote the equilibrium match
+probability by $P^*(i,j) = P(i,j,c^*(i,j))$.
+
+\subsection{Value functions and equilibrium}
+\label{sec:equilibrium}
+
+The values of search satisfy the following Bellman equations, which are the
+analogue of Proposition~1 in EGK with the deterministic acceptance indicator
+replaced by the match probability $P^*$.
+
+\begin{proposition}[Value functions]
+\label{prop:value}
+In a stationary equilibrium the value of search for a bank of type $i$ and
+for a project of type $j$ satisfy
+\begin{align}
+  V_B(i) &= \frac{\lambda_B}{r + \lambda_B}
+  \int \Big[ P^*(i,j)\, \E[\RB(i,j,c^*(i,j))]
+    + \big(1 - P^*(i,j)\big) \max\{V_B(i), 1 + r\} \Big] dF_P(j),
+  \label{eq:VB} \\
+  V_P(j) &= \frac{\lambda_P}{r + \lambda_P}
+  \int \Big[ P^*(i,j)\, \E[\RP(i,j,c^*(i,j))]
+    + \big(1 - P^*(i,j)\big) V_P(j) \Big] dF_B(i).
+  \label{eq:VP}
+\end{align}
+\end{proposition}
+
+The factor $\lambda/(r+\lambda)$ is the expected discount applied to the next
+meeting, which arrives after an exponentially distributed waiting time with
+mean $1/\lambda$. Inside the integral, with probability $P^*$ the meeting
+results in a loan and the agent receives the contract payoff; with
+probability $1 - P^*$ the agent returns to the market and retains the value
+of search.
+
+\begin{definition}[Equilibrium]
+A stationary search equilibrium consists of value functions $V_B(\cdot)$,
+$V_P(\cdot)$, a contract policy $c^*(\cdot,\cdot)$, and a matching
+probability $P^*(\cdot,\cdot)$ such that (i) given $V_B$ and $V_P$, the
+contract $c^*(i,j)$ solves \eqref{eq:cstar} for every pair $(i,j)$;
+(ii) $P^*(i,j)$ is given by \eqref{eq:P} evaluated at $c^*(i,j)$; and
+(iii) $V_B$ and $V_P$ satisfy \eqref{eq:VB}--\eqref{eq:VP}.
+\end{definition}
+
+The equilibrium is computed by value-function iteration as in EGK. Starting
+from an initial guess $(V_B^0, V_P^0)$, we solve \eqref{eq:cstar} and
+\eqref{eq:P} on a discrete grid of type pairs, update the value functions
+using \eqref{eq:VB}--\eqref{eq:VP}, and iterate until the values converge.
+The contract policy $c^*(i,j)$, the match probability $P^*(i,j)$, and the
+implied default, violation and recovery outcomes are then the model objects
+whose moments are matched to the data.
+
+\paragraph{Discussion.}
+Three features distinguish the model from EGK and merit comment. First, in
+EGK the contract affects firm value through a reduced-form function $h(c)$;
+here the contract affects value through explicit default and recovery
+channels, \eqref{eq:PE}--\eqref{eq:theta}, so that the ``cost'' of a higher
+spread is a higher default probability and the ``benefit'' of a tighter
+covenant is a higher recovery rate, bought at the price of more frequent
+control transfers. Second, the split of surplus is not a separate object:
+it is implied by the debt payoff structure in \eqref{eq:RB}--\eqref{eq:RP}.
+Third, acceptance is probabilistic rather than deterministic. The share of
+accepted matches in which one party's pecuniary surplus is negative is an
+equilibrium outcome that we report alongside the estimates.
+
+\begin{thebibliography}{1}
+\bibitem[Ewens et al.(2022)]{ewens2022}
+Ewens, M., A.~S. Gorbenko, and A.~Korteweg (2022).
+\newblock Venture capital contracts.
+\newblock \emph{Journal of Financial Economics} 143(1), 131--158.
+\end{thebibliography}
+
+\end{document}
